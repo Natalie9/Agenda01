@@ -15,62 +15,14 @@ page-home {
     color: white;
     font-size: 23px;
     text-align:center;
+    position: fixed;
 
   }
   .seg{
     background:#f12040;
   }
-  .horario{
-    border: solid 1px #afafaf;
-
-  }
-  .tamanho{
-    left: 0px;
-    position: absolute;
-    width: 100%;
-    top: 90%;
-
-  }
-  .aula{
-    width: 70%;
-  }
-  .tamanhoLinha{
-    height: 40px;
-    width: 100%;
-  }
-  .tamanhoHorario{
-    bottom: 8%;
-    position: absolute;
-    font-size: 20px;
-    color: #afafaf;
-    width: 100%;
-    padding: 0px;
-    text-align: center;
-  }
   .img{
     width: 50%;
-    position: absolute;
-    top: 3%;
   }
-  .imagens{
-    position: absolute;
-    top: 40%;
-  }
-  .balao {
-    background-color:#39c;
-    border-top:10px solid #39c;
-    border-left:10px solid transparent;
-    background-clip: padding-box;
-    padding: 0 10px 10px 10px;
-    width: 100px;
-    height: 100px;
-    left: 50%;
-    position: absolute;
-}
-
-.ballon img{
-    position: absolute;
-}
-
-
+  
 }
