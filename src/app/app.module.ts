@@ -9,6 +9,11 @@ import { Calendario } from '../pages/calendario/calendario';
 import { Faltas } from '../pages/faltas/faltas';
 import { Livros } from '../pages/livros/livros';
 import { Notas } from '../pages/notas/notas';
+import { Atividades } from '../pages/atividades/atividades';
+import { Provas } from '../pages/provas/provas';
+import { EAD } from '../pages/ead/ead';
+import { Seminarios } from '../pages/seminarios/seminarios';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +26,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Calendario,
     Faltas,
     Livros,
-    Notas
+    Notas,
+    Atividades,
+    Provas,
+    EAD,
+    Seminarios
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Calendario,
     Faltas,
     Livros,
-    Notas
+    Notas,
+    Atividades,
+    Provas,
+    EAD,
+    Seminarios
   ],
   providers: [
     StatusBar,
