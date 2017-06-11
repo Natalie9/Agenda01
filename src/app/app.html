@@ -7,33 +7,40 @@
   		.introMenu{
   			width: 100%¨;
   			height: 150px;
-  			background:url('http://noticias.universia.com.br/net/images/educacion/l/li/liv/livros-gratis-download.jpg');
+  			background:url('http://www.meionorte.com/uploads/imagens/2016/4/11/16-livros-mais-vendidos-do-mundo-23707acb-e7e1-4291-944f-150e03f18f68.jpg');
   			position: relative;
   			left: 0px;
+         background-size: 500px;
   			bottom: 0px;
   		}
   		.image{
-  			border-radius: 200px;
-  			position: absolute;
+        position: absolute;
   			left: 30%;
-  			top: 20%;
+        box-shadow: 0px  0px 10px gray;
+  			top: 13%;
+        border: white solid 1px;
   		}
   		.nome{position: absolute;
   			left: 50px;
   			color: white;
   			font-weight: bold;
   			bottom: 10px}
+        .listMenu{
+          color: black;
+        }
   	</style>
+
   </ion-header>
 
   <ion-content>
    <div class="introMenu">
-   	<img  class="image" src="http://toocoldtobefashion.files.wordpress.com/2012/05/curiosidade-sobre-o-seriado-chaves-quico.jpg" width="100">
+   	<img  class="image img-circle" src="http://www.jornaldabarra.com.br/wp-content/uploads/2017/02/perfil-nathalia_dill.jpg" width="80" height="80"/>
 
-  	<span class="nome"> Nome: Kiko Tesouro dos mares<br/> 
-  	Email: Kiko@gmail.com </span>
+  	<span class="nome"> User: Dieny586   <i style="margin-left:30px;" class="glyphicon glyphicon-menu-down"></i><br/>
+  	Email: Dieny@gmail.com
+  </span>
    </div>
-    <ion-list>
+    <ion-list class="listMenu">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
