@@ -20,13 +20,18 @@
   			top: 13%;
         border: white solid 1px;
   		}
-  		.nome{position: absolute;
+  		.nome{
+        position: absolute;
   			left: 50px;
   			color: white;
-  			font-weight: bold;
-  			bottom: 10px}
-        .listMenu{
-          color: black;
+  			bottom: 10px
+
+      }
+
+        .iconseta{
+          position: static;
+          right: 10%;
+          bottom: 10px;
         }
   	</style>
 
@@ -36,12 +41,13 @@
    <div class="introMenu">
    	<img  class="image img-circle" src="http://www.jornaldabarra.com.br/wp-content/uploads/2017/02/perfil-nathalia_dill.jpg" width="80" height="80"/>
 
-  	<span class="nome"> User: Dieny586   <i style="margin-left:30px;" class="glyphicon glyphicon-menu-down"></i><br/>
-  	Email: Dieny@gmail.com
-  </span>
+  	<div class="nome"> User: Dieny586 <br/>
+  	Email: Dieny@gmail.com  <i class=" iconseta glyphicon  glyphicon-menu-down"> </i>
+  </div>
    </div>
     <ion-list class="listMenu">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-left></ion-icon>
         {{p.title}}
       </button>
     </ion-list>
