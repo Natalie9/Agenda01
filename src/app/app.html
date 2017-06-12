@@ -15,38 +15,49 @@
   		}
   		.image{
         position: absolute;
-  			left: 30%;
+  			left: 35%;
         box-shadow: 0px  0px 10px gray;
   			top: 13%;
-        border: white solid 1px;
+        border: white solid 3px;
   		}
   		.nome{
         position: absolute;
-  			left: 50px;
+  			left: 30%;
+        font-size: 15px;
   			color: white;
-  			bottom: 10px
+        font-weight: lighter;
+  			bottom: 20%;
 
       }
-
+      .listMenu{
+        background-color:  #4B4242;
+      }
         .iconseta{
-          position: static;
-          right: 10%;
-          bottom: 10px;
+          position:absolute;
+          left: 110%;
+          font-weight: lighter;
+          bottom: 0;
+          color: white;
         }
+
   	</style>
 
   </ion-header>
 
-  <ion-content>
+  <ion-content class="menucont">
    <div class="introMenu">
    	<img  class="image img-circle" src="http://www.jornaldabarra.com.br/wp-content/uploads/2017/02/perfil-nathalia_dill.jpg" width="80" height="80"/>
 
-  	<div class="nome"> User: Dieny586 <br/>
-  	Email: Dieny@gmail.com  <i class=" iconseta glyphicon  glyphicon-menu-down"> </i>
-  </div>
+  	<div class="nome">
+  	   lawrence hawking
+       <i class=" iconseta glyphicon  glyphicon-menu-down"> </i>
+     </div>
+
+
    </div>
-    <ion-list class="listMenu">
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+   <br/>
+    <ion-list  class="menu">
+      <button   menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon [name]="p.icon" item-left></ion-icon>
         {{p.title}}
       </button>
