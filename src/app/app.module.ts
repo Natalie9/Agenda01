@@ -13,6 +13,7 @@ import { Atividades } from '../pages/atividades/atividades';
 import { Provas } from '../pages/provas/provas';
 import { EAD } from '../pages/ead/ead';
 import { Seminarios } from '../pages/seminarios/seminarios';
+import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,7 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Atividades,
     Provas,
     EAD,
-    Seminarios
+    Seminarios,
+    AdicionarLivros
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Atividades,
     Provas,
     EAD,
-    Seminarios
+    Seminarios,
+    AdicionarLivros
   ],
   providers: [
     StatusBar,

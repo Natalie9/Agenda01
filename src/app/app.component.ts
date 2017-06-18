@@ -10,6 +10,7 @@ import { Faltas } from '../pages/faltas/faltas';
 import { Livros } from '../pages/livros/livros';
 import { Notas } from '../pages/notas/notas';
 
+
 @Component({
   templateUrl: 'app.html'
 })

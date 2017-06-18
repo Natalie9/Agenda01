@@ -1,30 +1,28 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AdicionarLivros } from '../adicionar-livros/adicionar-livros';
+import { Livros } from '../livros/livros';
 /**
- * Generated class for the Livros page.
+ * Generated class for the AdicionarLivros page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-livros',
-  templateUrl: 'livros.html',
+  selector: 'page-adicionar-livros',
+  templateUrl: 'adicionar-livros.html',
 })
-export class Livros {
+export class AdicionarLivros {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Livros');
+    console.log('ionViewDidLoad AdicionarLivros');
   }
+  voltar(){
 
-
-  adicionar(){
-
-      this.navCtrl.push(AdicionarLivros);
+      this.navCtrl.push(Livros);
 
   }
 
