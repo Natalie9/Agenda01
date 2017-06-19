@@ -18,6 +18,7 @@ import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Seminarios,
     AdicionarLivros
   ],
+
+
+// In your App's module:
+
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

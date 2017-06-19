@@ -13,9 +13,27 @@
     <ion-title>Notas</ion-title>
   </ion-navbar>
 
-</ion-header>
+  <script src="node_modules/chart.js/src/chart.js"></script>
+  </ion-header>
 
 
-<ion-content padding>
+  <ion-content padding>
+    <div style="display: block">
+      <canvas baseChart
+                  [data]="doughnutChartData"
 
+                  [chartType]="doughnutChartType"
+                  [labels]="doughnutChartLabels"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div style="display: block">
+      <canvas baseChart
+                  [data]="doughnutChartData2"
+
+                  [chartType]="doughnutChartType2"
+                  [labels]="doughnutChartLabels2"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+    </div>
 </ion-content>
