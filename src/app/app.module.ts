@@ -13,9 +13,14 @@ import { Atividades } from '../pages/atividades/atividades';
 import { Provas } from '../pages/provas/provas';
 import { EAD } from '../pages/ead/ead';
 import { Seminarios } from '../pages/seminarios/seminarios';
+
+
+
+import { NgCalendarModule  } from 'ionic2-calendar';
+
+
+
 import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
-
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartsModule } from 'ng2-charts';
@@ -40,6 +45,7 @@ import { ChartsModule } from 'ng2-charts';
 // In your App's module:
 
   imports: [
+  NgCalendarModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ChartsModule
