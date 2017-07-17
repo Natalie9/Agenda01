@@ -1,0 +1,11 @@
+page-signin {
+
+ion-content{ background-image: url('../../assets/back.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+}
+.b1{width: 50%; position: absolute; bottom: 0; height: 10%;right: 0; background-color: #FF0700; opacity: 0.7;font-weight: bold; color: #fff;}
+.b2{width: 50%; position: absolute; bottom: 0; height: 10%;left: 0; background-color: #0E30BA; opacity: 0.7; font-weight: bold;color: #fff;}
+}

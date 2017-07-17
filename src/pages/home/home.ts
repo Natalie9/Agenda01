@@ -5,16 +5,24 @@ import { Seminarios } from '../seminarios/seminarios';
 import { EAD } from '../ead/ead';
 import { Provas } from '../provas/provas';
 
+
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController ) {
+
+  constructor(
+    public navCtrl: NavController) {
 
 
-  }
+      }
+
+
+
   ati(){
     this.navCtrl.push(Atividades);
   }

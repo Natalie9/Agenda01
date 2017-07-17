@@ -2,13 +2,16 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { SigninPage } from '../pages/signin/signin';
 import { HomePage } from '../pages/home/home';
 import { Agenda } from '../pages/agenda/agenda';
 import { Calendario } from '../pages/calendario/calendario';
 import { Faltas } from '../pages/faltas/faltas';
 import { Livros } from '../pages/livros/livros';
 import { Notas } from '../pages/notas/notas';
+import { Sair } from '../pages/sair/sair';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -16,11 +19,21 @@ import { Notas } from '../pages/notas/notas';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any;
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, afAuth: AngularFireAuth) {
+      const authObserver = afAuth.authState.subscribe(user => {
+      if (user) {
+        this.rootPage = HomePage;
+        authObserver.unsubscribe();
+      } else {
+        this.rootPage = SigninPage;
+        authObserver.unsubscribe();
+      }
+    });
+
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -30,7 +43,9 @@ export class MyApp {
       { title: 'Calendário', component: Calendario, icon:'calendar' },
       { title: 'Faltas', component: Faltas, icon:'grid' },
       { title: 'Livros', component: Livros, icon:'book' },
-      { title: 'Notas', component: Notas, icon:'calculator' }
+      { title: 'Notas', component: Notas, icon:'calculator' },
+      { title: 'Sair', component: Sair, icon:'exit' }
+
     ];
 
   }
@@ -47,6 +62,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+
     this.nav.setRoot(page.component);
   }
 }

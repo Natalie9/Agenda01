@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Agenda } from '../pages/agenda/agenda';
@@ -14,11 +15,28 @@ import { Provas } from '../pages/provas/provas';
 import { EAD } from '../pages/ead/ead';
 import { Seminarios } from '../pages/seminarios/seminarios';
 import { NgCalendarModule  } from 'ionic2-calendar';
+import { SigninPage } from '../pages/signin/signin';
+import { SigninWithEmailPage } from '../pages/signinwithemail/signinwithemail';
+import { SignupPage } from '../pages/signup/signup';
+import { ResetpasswordPage } from '../pages/resetpassword/resetpassword';
+import { Sair } from '../pages/sair/sair';
+import { AuthService } from '../providers/auth/auth-service';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook } from '@ionic-native/facebook';
+
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+const firebaseConfig = {
+      apiKey: "AIzaSyAYqpBZaOg6eAd0xDyFj9VviAi2f3w99z4",
+   authDomain: "agenda01-10aa5.firebaseapp.com",
+   databaseURL: "https://agenda01-10aa5.firebaseio.com",
+   projectId: "agenda01-10aa5",
+   storageBucket: "agenda01-10aa5.appspot.com",
+   messagingSenderId: "536216500547"
+};
 @NgModule({
   declarations: [
     MyApp,
@@ -31,12 +49,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Atividades,
     Provas,
     EAD,
-    Seminarios
+    Seminarios,
+    SigninPage,
+    SigninWithEmailPage,
+    SignupPage,
+    ResetpasswordPage,
+    Sair
   ],
   imports: [
   NgCalendarModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,12 +75,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Atividades,
     Provas,
     EAD,
-    Seminarios
+    Seminarios,
+    SigninPage,
+    SigninWithEmailPage,
+    SignupPage,
+    ResetpasswordPage,
+    Sair
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService,
+    GooglePlus,
+    Facebook
   ]
 })
-export class AppModule {}
+export class AppModule {
+
+}
