@@ -14,9 +14,6 @@ import { Atividades } from '../pages/atividades/atividades';
 import { Provas } from '../pages/provas/provas';
 import { EAD } from '../pages/ead/ead';
 import { Seminarios } from '../pages/seminarios/seminarios';
-
-
-
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { SigninPage } from '../pages/signin/signin';
 import { SigninWithEmailPage } from '../pages/signinwithemail/signinwithemail';
@@ -26,10 +23,6 @@ import { Sair } from '../pages/sair/sair';
 import { AuthService } from '../providers/auth/auth-service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
-
-
-
-
 import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -56,7 +49,6 @@ const firebaseConfig = {
     Provas,
     EAD,
     Seminarios,
-
     SigninPage,
     SigninWithEmailPage,
     SignupPage,
