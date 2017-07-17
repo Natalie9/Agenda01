@@ -12,10 +12,18 @@
     </button>
     <ion-title>Faltas</ion-title>
   </ion-navbar>
-
+<script src="node_modules/chart.js/src/chart.js"></script>
 </ion-header>
 
 
 <ion-content padding>
+  <div style="display: block">
+    <canvas baseChart
+                [data]="doughnutChartData"
 
+                [chartType]="doughnutChartType"
+                [labels]="doughnutChartLabels"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+  </div>
 </ion-content>

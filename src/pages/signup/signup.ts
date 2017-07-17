@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { User } from '../../providers/auth/user';
 import { AuthService } from '../../providers/auth/auth-service';
 import { HomePage } from '../home/home';
-import fb from 'firebase';
 @IonicPage()
 @Component({
   selector: 'page-signup',

@@ -13,6 +13,7 @@ import { Sair } from '../pages/sair/sair';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })

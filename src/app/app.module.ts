@@ -14,6 +14,9 @@ import { Atividades } from '../pages/atividades/atividades';
 import { Provas } from '../pages/provas/provas';
 import { EAD } from '../pages/ead/ead';
 import { Seminarios } from '../pages/seminarios/seminarios';
+
+
+
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { SigninPage } from '../pages/signin/signin';
 import { SigninWithEmailPage } from '../pages/signinwithemail/signinwithemail';
@@ -26,8 +29,11 @@ import { Facebook } from '@ionic-native/facebook';
 
 
 
+
+import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ChartsModule } from 'ng2-charts';
 
 const firebaseConfig = {
       apiKey: "AIzaSyAYqpBZaOg6eAd0xDyFj9VviAi2f3w99z4",
@@ -50,18 +56,27 @@ const firebaseConfig = {
     Provas,
     EAD,
     Seminarios,
+
     SigninPage,
     SigninWithEmailPage,
     SignupPage,
     ResetpasswordPage,
-    Sair
+    Sair,
+    AdicionarLivros
+
   ],
+
+
+// In your App's module:
+
   imports: [
   NgCalendarModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ChartsModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -80,7 +95,8 @@ const firebaseConfig = {
     SigninWithEmailPage,
     SignupPage,
     ResetpasswordPage,
-    Sair
+    Sair,
+    AdicionarLivros
   ],
   providers: [
     StatusBar,
