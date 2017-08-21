@@ -11,6 +11,8 @@ import { Livros } from '../pages/livros/livros';
 import { Notas } from '../pages/notas/notas';
 import { Sair } from '../pages/sair/sair';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { HomeServices } from "../providers/home-services/home-services";
+import { FirebaseListObservable } from "angularfire2/database";
 
 
 
@@ -23,12 +25,13 @@ export class MyApp {
   rootPage: any;
 
   pages: Array<{title: string, component: any, icon: string}>;
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, afAuth: AngularFireAuth) {
+  items: FirebaseListObservable<any[]>;
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, afAuth: AngularFireAuth,private homeServices: HomeServices)  {
       const authObserver = afAuth.authState.subscribe(user => {
       if (user) {
         this.rootPage = HomePage;
         authObserver.unsubscribe();
+       this.items = this.homeServices.getAll();
       } else {
         this.rootPage = SigninPage;
         authObserver.unsubscribe();
@@ -49,6 +52,11 @@ export class MyApp {
 
     ];
 
+   
+    
+  
+      
+      
   }
 
   initializeApp() {

@@ -6,8 +6,6 @@ import { EAD } from '../ead/ead';
 import { Provas } from '../provas/provas';
 
 
-
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -15,11 +13,10 @@ import { Provas } from '../provas/provas';
 export class HomePage {
 
 
-  constructor(
-    public navCtrl: NavController) {
-
-
-      }
+  
+  
+    constructor(private navCtrl: NavController) {
+    }
 
 
 

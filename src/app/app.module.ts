@@ -27,6 +27,11 @@ import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartsModule } from 'ng2-charts';
+import { HomeServices } from "../providers/home-services/home-services";
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
+
 
 const firebaseConfig = {
       apiKey: "AIzaSyAYqpBZaOg6eAd0xDyFj9VviAi2f3w99z4",
@@ -67,7 +72,8 @@ const firebaseConfig = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    ChartsModule
+    ChartsModule,
+    AngularFireDatabaseModule
 
   ],
   bootstrap: [IonicApp],
@@ -96,9 +102,11 @@ const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     GooglePlus,
-    Facebook
+    Facebook,
+    HomeServices
   ]
 })
 export class AppModule {
 
+  
 }

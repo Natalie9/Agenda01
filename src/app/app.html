@@ -52,8 +52,8 @@
    	<img  class="image img-circle" src="http://static1.belezaextraordinaria.com.br/articles/9/15/06/9/@/175424-as-manchas-no-rosto-podem-surgir-por-cau-opengraph_1200-3.jpg" width="80" height="80"/>
 
 
-  	<div class="nome">
-  	   lawrence hawking
+  	<div class="nome" *ngFor="let item of items | async">
+      {{item.name}}
        <i class=" iconseta glyphicon  glyphicon-menu-down"> </i>
      </div>
 
