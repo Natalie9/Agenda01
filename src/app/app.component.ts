@@ -25,13 +25,14 @@ export class MyApp {
   rootPage: any;
 
   pages: Array<{title: string, component: any, icon: string}>;
-  items: FirebaseListObservable<any[]>;
+  userget:FirebaseListObservable<any>;
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, afAuth: AngularFireAuth,private homeServices: HomeServices)  {
       const authObserver = afAuth.authState.subscribe(user => {
       if (user) {
         this.rootPage = HomePage;
         authObserver.unsubscribe();
-       this.items = this.homeServices.getAll();
+       
+        this.userget = this.homeServices.getAll();
       } else {
         this.rootPage = SigninPage;
         authObserver.unsubscribe();
@@ -51,12 +52,7 @@ export class MyApp {
       { title: 'Sair', component: Sair, icon:'exit' }
 
     ];
-
-   
-    
   
-      
-      
   }
 
   initializeApp() {
@@ -71,7 +67,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-
+    
     this.nav.setRoot(page.component);
   }
 }

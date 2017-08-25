@@ -5,20 +5,20 @@ import * as firebase from 'firebase/app';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import fb from 'firebase';
+import { AngularFireDatabase } from "angularfire2/database";
 @Injectable()
 export class AuthService {
 
-  constructor(private angularFireAuth: AngularFireAuth, private googlePlus: GooglePlus, private facebook: Facebook) { }
+  constructor(private db: AngularFireDatabase, private angularFireAuth: AngularFireAuth, private googlePlus: GooglePlus, private facebook: Facebook) { }
 
   createUser(user: User) {
 
     return this.angularFireAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
 
   }
-  registerUser(userId: string, nome: string){
-		 return fb.database().ref('users').child(userId).set({
-		    name: nome
-		  });
+  registerUser(userId: string, user: User){
+		 return  this.db.object(`/users/${userId}`)
+     .set(user)
 }
 
   

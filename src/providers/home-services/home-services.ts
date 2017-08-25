@@ -10,14 +10,15 @@ import fb from 'firebase';
 @Injectable()
 export class HomeServices {
 
-    items: FirebaseListObservable<any[]>;
+    items: FirebaseListObservable<any>;
     
     constructor(private db: AngularFireDatabase, private angularFireAuth: AngularFireAuth, private fb: FirebaseApp) {
       angularFireAuth.authState.subscribe(user => {
         if (user) { 
           //let path =  '/users/' + this.angularFireAuth.auth.currentUser.uid;
-          console.log(fb.database().ref('users').child(this.angularFireAuth.auth.currentUser.uid).parent);
-       this.items = db.list(fb.database().ref(this.angularFireAuth.auth.currentUser.uid).path);
+          console.log(fb.database().ref('users').child(this.angularFireAuth.auth.currentUser.uid));
+       this.items = this.db.list(`/users/${this.angularFireAuth.auth.currentUser.uid}`)
+       
       // this.items =db.list(fb.database().ref('users/'+this.angularFireAuth.auth.currentUser.uid).path);
       }
         });
