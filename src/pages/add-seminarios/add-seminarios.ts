@@ -1,30 +1,28 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AddTarefaPage } from '../add-tarefa/add-tarefa';
-
+import { Seminarios } from '../seminarios/seminarios';
 /**
- * Generated class for the Atividades page.
+ * Generated class for the AddSeminariosPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-atividades',
-  templateUrl: 'atividades.html',
+  selector: 'page-add-seminarios',
+  templateUrl: 'add-seminarios.html',
 })
-export class Atividades {
+export class AddSeminariosPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Atividades');
+    console.log('ionViewDidLoad AddSeminariosPage');
   }
-  adicionar(){
+  voltar(){
 
-      this.navCtrl.push(AddTarefaPage);
+      this.navCtrl.push(Seminarios);
 
   }
-
 }

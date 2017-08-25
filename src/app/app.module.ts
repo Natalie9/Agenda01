@@ -24,6 +24,8 @@ import { AuthService } from '../providers/auth/auth-service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
 import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
+import { AdicionarAtividadesPage } from '../pages/adicionar-atividades/adicionar-atividades';
+import { AdicionarProvasPage } from '../pages/adicionar-provas/adicionar-provas';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartsModule } from 'ng2-charts';
@@ -34,12 +36,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 const firebaseConfig = {
-      apiKey: "AIzaSyAYqpBZaOg6eAd0xDyFj9VviAi2f3w99z4",
-   authDomain: "agenda01-10aa5.firebaseapp.com",
-   databaseURL: "https://agenda01-10aa5.firebaseio.com",
-   projectId: "agenda01-10aa5",
-   storageBucket: "agenda01-10aa5.appspot.com",
-   messagingSenderId: "536216500547"
+  apiKey: "AIzaSyDvgakcajCrhkcnLKLlFFaYh87dHa1CodI",
+authDomain: "agenda01-2e5e2.firebaseapp.com",
+databaseURL: "https://agenda01-2e5e2.firebaseio.com",
+projectId: "agenda01-2e5e2",
+storageBucket: "",
+messagingSenderId: "162395344261"
 };
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ const firebaseConfig = {
     SignupPage,
     ResetpasswordPage,
     Sair,
-    AdicionarLivros
+    AdicionarLivros,
+    AdicionarAtividadesPage,
+    AdicionarProvasPage
 
   ],
 
@@ -94,7 +98,9 @@ const firebaseConfig = {
     SignupPage,
     ResetpasswordPage,
     Sair,
-    AdicionarLivros
+    AdicionarLivros,
+    AdicionarAtividadesPage,
+    AdicionarProvasPage
   ],
   providers: [
     StatusBar,
@@ -108,5 +114,5 @@ const firebaseConfig = {
 })
 export class AppModule {
 
-  
+
 }
