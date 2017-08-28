@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AddTarefaPage } from '../add-tarefa/add-tarefa';
 /**
  * Generated class for the Seminarios page.
  *
@@ -19,6 +19,11 @@ export class Seminarios {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Seminarios');
+  }
+  adicionar(){
+
+      this.navCtrl.push(AddTarefaPage);
+
   }
 
 }

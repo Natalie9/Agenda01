@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { HomePage } from '../home/home';
 /**
  * Generated class for the AddTarefaPage page.
  *
@@ -20,5 +20,9 @@ export class AddTarefaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddTarefaPage');
   }
+  voltar(){
 
+      this.navCtrl.setRoot(HomePage);
+
+  }
 }

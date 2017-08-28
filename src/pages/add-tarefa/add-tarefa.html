@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>AddTarefa</ion-title>
+    <ion-title>addTarefa</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-item>
-     <ion-label floating>Título</ion-label>
+     <ion-label floating>Atividade</ion-label>
      <ion-input type="text" value=""></ion-input>
    </ion-item>
 
@@ -37,10 +37,10 @@
   <ion-item>
       <ion-label stacked>Tipo</ion-label>
       <ion-select>
-        <ion-option value="Atividade">Atividade</ion-option>
-        <ion-option value="Provas">Prova</ion-option>
-        <ion-option value="EAD">EAD</ion-option>
-        <ion-option value="Seminario">Seminário</ion-option>
+        <ion-option value="ati">Atividade</ion-option>
+        <ion-option value="prova">Prova</ion-option>
+        <ion-option value="ead">EAD</ion-option>
+        <ion-option value="sem">Seminário</ion-option>
       </ion-select>
   </ion-item>
   <ion-item>
@@ -48,5 +48,5 @@
     <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
   </ion-item>
 
-    <button ion-button round (click)="voltar()" class="botao" >Prontinho!</button>
+    <button ion-button round (click)="voltar()" class="botao" >Prontinho</button>
 </ion-content>

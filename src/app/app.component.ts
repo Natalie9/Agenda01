@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SigninPage } from '../pages/signin/signin';
 import { HomePage } from '../pages/home/home';
-import { Agenda } from '../pages/agenda/agenda';
 import { Calendario } from '../pages/calendario/calendario';
 import { Faltas } from '../pages/faltas/faltas';
 import { Livros } from '../pages/livros/livros';
@@ -31,7 +30,7 @@ export class MyApp {
       if (user) {
         this.rootPage = HomePage;
         authObserver.unsubscribe();
-       
+
         this.userget = this.homeServices.getAll();
       } else {
         this.rootPage = SigninPage;
@@ -44,7 +43,6 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage, icon:'home'  },
-      { title: 'Agenda', component: Agenda , icon:'paper' },
       { title: 'Calendário', component: Calendario, icon:'calendar' },
       { title: 'Faltas', component: Faltas, icon:'grid' },
       { title: 'Livros', component: Livros, icon:'book' },
@@ -52,7 +50,7 @@ export class MyApp {
       { title: 'Sair', component: Sair, icon:'exit' }
 
     ];
-  
+
   }
 
   initializeApp() {
@@ -67,7 +65,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    
+
     this.nav.setRoot(page.component);
   }
 }
