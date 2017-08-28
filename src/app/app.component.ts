@@ -11,7 +11,7 @@ import { Notas } from '../pages/notas/notas';
 import { Sair } from '../pages/sair/sair';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomeServices } from "../providers/home-services/home-services";
-import { FirebaseListObservable } from "angularfire2/database";
+import { FirebaseObjectObservable } from "angularfire2/database";
 
 
 
@@ -24,14 +24,20 @@ export class MyApp {
   rootPage: any;
 
   pages: Array<{title: string, component: any, icon: string}>;
-  userget:FirebaseListObservable<any>;
+  userget:FirebaseObjectObservable<any>;
+
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, afAuth: AngularFireAuth,private homeServices: HomeServices)  {
+      console.log('teste app');
       const authObserver = afAuth.authState.subscribe(user => {
+
       if (user) {
         this.rootPage = HomePage;
         authObserver.unsubscribe();
 
+
         this.userget = this.homeServices.getAll();
+        this.userget.subscribe();
+
       } else {
         this.rootPage = SigninPage;
         authObserver.unsubscribe();

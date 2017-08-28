@@ -23,7 +23,6 @@ import { AuthService } from '../providers/auth/auth-service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
 import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
-import { AdicionarAtividadesPage } from '../pages/adicionar-atividades/adicionar-atividades';
 import { AddTarefaPage } from '../pages/add-tarefa/add-tarefa';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -60,7 +59,6 @@ messagingSenderId: "162395344261"
     ResetpasswordPage,
     Sair,
     AdicionarLivros,
-    AdicionarAtividadesPage,
     AddTarefaPage
 
   ],
@@ -96,7 +94,6 @@ messagingSenderId: "162395344261"
     ResetpasswordPage,
     Sair,
     AdicionarLivros,
-    AdicionarAtividadesPage,
     AddTarefaPage
   ],
   providers: [
