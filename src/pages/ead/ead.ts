@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AddTarefaPage } from '../add-tarefa/add-tarefa';
 /**
  * Generated class for the EAD page.
  *
@@ -20,5 +20,9 @@ export class EAD {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EAD');
   }
+  adicionar(){
 
+      this.navCtrl.push(AddTarefaPage);
+
+  }
 }

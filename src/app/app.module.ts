@@ -5,7 +5,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { Agenda } from '../pages/agenda/agenda';
 import { Calendario } from '../pages/calendario/calendario';
 import { Faltas } from '../pages/faltas/faltas';
 import { Livros } from '../pages/livros/livros';
@@ -24,6 +23,7 @@ import { AuthService } from '../providers/auth/auth-service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
 import { AdicionarLivros } from '../pages/adicionar-livros/adicionar-livros';
+import { AddTarefaPage } from '../pages/add-tarefa/add-tarefa';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartsModule } from 'ng2-charts';
@@ -34,18 +34,17 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 const firebaseConfig = {
-      apiKey: "AIzaSyAYqpBZaOg6eAd0xDyFj9VviAi2f3w99z4",
-   authDomain: "agenda01-10aa5.firebaseapp.com",
-   databaseURL: "https://agenda01-10aa5.firebaseio.com",
-   projectId: "agenda01-10aa5",
-   storageBucket: "agenda01-10aa5.appspot.com",
-   messagingSenderId: "536216500547"
+  apiKey: "AIzaSyDvgakcajCrhkcnLKLlFFaYh87dHa1CodI",
+authDomain: "agenda01-2e5e2.firebaseapp.com",
+databaseURL: "https://agenda01-2e5e2.firebaseio.com",
+projectId: "agenda01-2e5e2",
+storageBucket: "",
+messagingSenderId: "162395344261"
 };
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    Agenda,
     Calendario,
     Faltas,
     Livros,
@@ -59,7 +58,8 @@ const firebaseConfig = {
     SignupPage,
     ResetpasswordPage,
     Sair,
-    AdicionarLivros
+    AdicionarLivros,
+    AddTarefaPage
 
   ],
 
@@ -80,7 +80,6 @@ const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    Agenda,
     Calendario,
     Faltas,
     Livros,
@@ -94,7 +93,8 @@ const firebaseConfig = {
     SignupPage,
     ResetpasswordPage,
     Sair,
-    AdicionarLivros
+    AdicionarLivros,
+    AddTarefaPage
   ],
   providers: [
     StatusBar,
@@ -108,5 +108,5 @@ const firebaseConfig = {
 })
 export class AppModule {
 
-  
+
 }

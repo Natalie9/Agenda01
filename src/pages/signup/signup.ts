@@ -26,7 +26,7 @@ export class SignupPage {
       this.authService.createUser(this.user)
         .then((user: any) => {
           user.sendEmailVerification();
-          this.authService.registerUser(user.uid, this.user.name);
+          this.authService.registerUser(user.uid, this.user);
           toast.setMessage('Usuário criado com sucesso.');
           toast.present();
 

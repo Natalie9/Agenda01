@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddTarefaPage } from '../add-tarefa/add-tarefa';
 
 /**
  * Generated class for the Atividades page.
@@ -19,6 +20,11 @@ export class Atividades {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Atividades');
+  }
+  adicionar(){
+
+      this.navCtrl.push(AddTarefaPage);
+
   }
 
 }
