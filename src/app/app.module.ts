@@ -29,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartsModule } from 'ng2-charts';
 import { HomeServices } from "../providers/home-services/home-services";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { addPase } from "../providers/auth/addPASE";
 
 
 
@@ -103,7 +104,8 @@ messagingSenderId: "162395344261"
     AuthService,
     GooglePlus,
     Facebook,
-    HomeServices
+    HomeServices,
+    addPase
   ]
 })
 export class AppModule {

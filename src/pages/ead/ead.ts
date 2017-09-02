@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddTarefaPage } from '../add-tarefa/add-tarefa';
+import { FirebaseListObservable } from "angularfire2/database";
+import { addPase } from "../../providers/auth/addPASE";
+
 /**
- * Generated class for the EAD page.
+ * Generated class for the Provas page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -13,16 +16,24 @@ import { AddTarefaPage } from '../add-tarefa/add-tarefa';
   templateUrl: 'ead.html',
 })
 export class EAD {
+      items:FirebaseListObservable<any[]>;
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public consultar :addPase) {
+    this.items = this.consultar.getAll();
+    console.log(this.items);
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EAD');
+    console.log('ionViewDidLoad Atividades');
   }
   adicionar(){
 
       this.navCtrl.push(AddTarefaPage);
 
+  }
+  removeItem(item:any){
+    this.consultar.remove(item);
   }
 }

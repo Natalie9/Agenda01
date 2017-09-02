@@ -4,6 +4,8 @@ import { Atividades } from '../atividades/atividades';
 import { Seminarios } from '../seminarios/seminarios';
 import { EAD } from '../ead/ead';
 import { Provas } from '../provas/provas';
+import { FirebaseListObservable } from "angularfire2/database";
+import { addPase } from "../../providers/auth/addPASE";
 
 
 @Component({
@@ -12,12 +14,14 @@ import { Provas } from '../provas/provas';
 })
 export class HomePage {
 
+  items:FirebaseListObservable<any[]>;
 
+    constructor(private navCtrl: NavController, public consultar :addPase) {
+      this.items = this.consultar.getAll();
+      console.log(this.items);
   
   
-    constructor(private navCtrl: NavController) {
     }
-
 
 
   ati(){

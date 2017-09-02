@@ -17,7 +17,8 @@ export class AuthService {
 
   }
   registerUser(userId: string, user: User){
-		 return  this.db.object(`/users/${userId}`)
+
+    return  this.db.object(`/users/${userId}`)
      .set(user)
 }
 

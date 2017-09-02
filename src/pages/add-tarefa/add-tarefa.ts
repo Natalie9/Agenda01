@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { User } from "../../providers/auth/user";
+import { Prova } from "../../providers/auth/prova";
+import { addPase } from "../../providers/auth/addPASE";
 /**
  * Generated class for the AddTarefaPage page.
  *
@@ -13,8 +16,12 @@ import { HomePage } from '../home/home';
   templateUrl: 'add-tarefa.html',
 })
 export class AddTarefaPage {
+  
+    prova:Prova = new Prova();
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private add :addPase) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  
   }
 
   ionViewDidLoad() {
@@ -22,7 +29,11 @@ export class AddTarefaPage {
   }
   voltar(){
 
+    this.add.save(this.prova);
       this.navCtrl.setRoot(HomePage);
 
+  
+    }
+
+   
   }
-}

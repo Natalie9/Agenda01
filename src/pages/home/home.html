@@ -16,9 +16,17 @@
       Atividades
     </ion-card-header>
     <ion-card-content>
-      -Lista da SOs<br/>
-      -Moodle Renatinho<br/>
-      -Relatório Física
+        <ion-list>
+            <ion-item-sliding *ngFor="let item of items | async">
+              <ion-item *ngIf="item.tipo == 'ati'">
+                  <div class="font">
+                      <span class="nome">  Atividade: {{ item?.atividade }}</span>
+               
+               <span class="data"> Data:{{ item?.data }}</span> 
+              </div>
+              </ion-item>
+            </ion-item-sliding>
+        </ion-list>
     </ion-card-content>
   </ion-card>
 
@@ -27,9 +35,17 @@
       Provas
     </ion-card-header>
     <ion-card-content>
-      -Lista da SOS <br/>
-      -Moodle Renatinho<br/>
-      -Relatório Física
+        <ion-list>
+            <ion-item-sliding *ngFor="let item of items | async">
+              <ion-item *ngIf="item.tipo == 'prova'">
+                  <div class="font">
+                      <span class="nome"> Prova:  {{ item?.atividade }}</span>
+               
+               <span class="data">Data:{{ item?.data }}</span> 
+                  </div>
+              </ion-item>
+            </ion-item-sliding>
+        </ion-list>
     </ion-card-content>
   </ion-card>
 
@@ -38,9 +54,17 @@
       EAD
     </ion-card-header>
     <ion-card-content>
-      -Lista da SOS <br/>
-      -Moodle Renatinho<br/>
-      -Relatório Física
+        <ion-list>
+            <ion-item-sliding *ngFor="let item of items | async">
+              <ion-item *ngIf="item.tipo == 'ead'">
+                  <div class="font">
+              <span class="nome">EAD:  {{ item?.atividade }}</span>
+               
+               <span class="data">Data:{{ item?.data }}</span> 
+              </div>
+              </ion-item>
+            </ion-item-sliding>
+        </ion-list>
     </ion-card-content>
   </ion-card>
 
@@ -49,9 +73,17 @@
       Seminários
     </ion-card-header>
     <ion-card-content>
-      -Lista da SOS <br/>
-      -Moodle Renatinho<br/>
-      -Relatório Física
+        <ion-list>
+            <ion-item-sliding *ngFor="let item of items | async">
+              <ion-item *ngIf="item.tipo == 'sem'">
+                  <div class="font">
+                      <span class="nome"> Seminario: {{ item?.atividade }}</span>
+               
+               <span class="data">Data:{{ item?.data }}</span> 
+        </div>
+              </ion-item>
+            </ion-item-sliding>
+        </ion-list>
     </ion-card-content>
   </ion-card>
 

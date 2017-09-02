@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>addTarefa</ion-title>
+    <ion-title>Adicionar</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,18 +16,18 @@
 <ion-content padding>
   <ion-item>
      <ion-label floating>Atividade</ion-label>
-     <ion-input type="text" value=""></ion-input>
+     <ion-input type="text"  [(ngModel)]="prova.atividade" ></ion-input>
    </ion-item>
 
    <ion-item>
       <ion-label floating>Descrição</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="prova.descricao"></ion-input>
     </ion-item>
 
 
   <ion-item>
       <ion-label stacked>Matéria</ion-label>
-      <ion-select>
+      <ion-select  [(ngModel)]="prova.materia">
         <ion-option value="Matemática">Matemática</ion-option>
         <ion-option value="História">História</ion-option>
         <ion-option value="Engenharia de Software">Engenharia de Software</ion-option>
@@ -36,7 +36,7 @@
 
   <ion-item>
       <ion-label stacked>Tipo</ion-label>
-      <ion-select>
+      <ion-select  [(ngModel)]="prova.tipo">
         <ion-option value="ati">Atividade</ion-option>
         <ion-option value="prova">Prova</ion-option>
         <ion-option value="ead">EAD</ion-option>
@@ -45,7 +45,7 @@
   </ion-item>
   <ion-item>
     <ion-label stacked>Data</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="prova.data"></ion-datetime>
   </ion-item>
 
     <button ion-button round (click)="voltar()" class="botao" >Prontinho</button>

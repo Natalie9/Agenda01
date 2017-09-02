@@ -14,34 +14,23 @@
 
 
 <ion-content padding>
-    <ion-item>
-      <ion-label>Lista da SOS</ion-label>
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
-    </ion-item>
+    
+  
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items | async">
+      <ion-item *ngIf="item.tipo == 'prova'">
 
-    <ion-item>
-      <ion-label>Moodle Renatinho</ion-label>
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
-    </ion-item>
+        {{ item?.atividade }}
+       
+       <span class="data">{{ item?.data }}</span> 
 
-    <ion-item>
-      <ion-label>Relatório Física</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
-    </ion-item>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button icon-only color="primary" (click)="editItem(item)"><ion-icon name="create"></ion-icon></button>
+        <button ion-button icon-only color="secondary" (click)="removeItem(item)"><ion-icon name="checkbox"></ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
-    <ion-item>
-      <ion-label>Não perde essa data</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Ta quase vencendo</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Juro que farei</ion-label>
-      <ion-checkbox color="dark" checked="false"></ion-checkbox>
-    </ion-item>
-    <img  (click)="adicionar()" class="plus" src="assets/add.png" width="80" height="80"/>
+    <img  (click)="adicionar()" class="plus" src="assets/add.png" width="50" height="50"/>
 </ion-content>
