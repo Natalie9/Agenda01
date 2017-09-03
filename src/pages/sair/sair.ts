@@ -15,9 +15,9 @@ import { SigninPage } from '../signin/signin';
 })
 export class Sair {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, authService: AuthService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthService) {
 
-  authService.signOut()
+  this.authService.signOut()
     .then(() => {
       this.navCtrl.setRoot(SigninPage);
     })

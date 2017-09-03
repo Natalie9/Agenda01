@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddTarefaPage } from '../add-tarefa/add-tarefa';
+import { FirebaseListObservable } from "angularfire2/database";
+import { addPase } from "../../providers/auth/addPASE";
+import { EditarPage } from "../editar/editar";
+
 /**
- * Generated class for the Seminarios page.
+ * Generated class for the Provas page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -12,18 +16,28 @@ import { AddTarefaPage } from '../add-tarefa/add-tarefa';
   selector: 'page-seminarios',
   templateUrl: 'seminarios.html',
 })
-export class Seminarios {
+export class Seminarios  {
+      items:FirebaseListObservable<any[]>;
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public consultar :addPase) {
+    this.items = this.consultar.getAll();
+    console.log(this.items);
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Seminarios');
+    console.log('ionViewDidLoad Atividades');
   }
   adicionar(){
 
       this.navCtrl.push(AddTarefaPage);
 
   }
-
+  removeItem(item:any){
+    this.consultar.remove(item);
+  }
+  editItem(item:any){
+    this.navCtrl.push(EditarPage,{prova:item});
+  }
 }

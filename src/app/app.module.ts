@@ -29,6 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChartsModule } from 'ng2-charts';
 import { HomeServices } from "../providers/home-services/home-services";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { addPase } from "../providers/auth/addPASE";
+import { EditarPage } from '../pages/editar/editar';
+
 
 
 
@@ -59,7 +62,8 @@ messagingSenderId: "162395344261"
     ResetpasswordPage,
     Sair,
     AdicionarLivros,
-    AddTarefaPage
+    AddTarefaPage,
+    EditarPage
 
   ],
 
@@ -94,7 +98,8 @@ messagingSenderId: "162395344261"
     ResetpasswordPage,
     Sair,
     AdicionarLivros,
-    AddTarefaPage
+    AddTarefaPage,
+    EditarPage
   ],
   providers: [
     StatusBar,
@@ -103,7 +108,8 @@ messagingSenderId: "162395344261"
     AuthService,
     GooglePlus,
     Facebook,
-    HomeServices
+    HomeServices,
+    addPase
   ]
 })
 export class AppModule {

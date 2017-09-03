@@ -47,4 +47,29 @@ export class SignupPage {
     }
   }
 
+
+  signInWithGoogle() {
+    this.authService.signInWithGoogle()
+      .then(() => {
+        this.navCtrl.setRoot(HomePage);
+      })
+      .catch((error) => {
+        console.error(error);
+        this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
+          .present();
+      });
+  }
+
+  signInWithFacebook() {
+    this.authService.signInWithFacebook()
+      .then(() => {
+        this.navCtrl.setRoot(HomePage);
+      })
+      .catch((error) => {
+        console.error(error);
+        this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
+          .present();
+      });
+  }
+
 }
