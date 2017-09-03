@@ -11,7 +11,7 @@ import { Notas } from '../pages/notas/notas';
 import { Sair } from '../pages/sair/sair';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomeServices } from "../providers/home-services/home-services";
-import { FirebaseObjectObservable } from "angularfire2/database";
+import { FirebaseObjectObservable, FirebaseListObservable } from "angularfire2/database";
 
 
 
@@ -24,10 +24,10 @@ export class MyApp {
   rootPage: any;
 
   pages: Array<{title: string, component: any, icon: string}>;
-  userget:FirebaseObjectObservable<any>;
+  userget:FirebaseListObservable<any[]>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, afAuth: AngularFireAuth,private homeServices: HomeServices)  {
-      console.log('teste app');
+
       const authObserver = afAuth.authState.subscribe(user => {
 
       if (user) {
@@ -37,6 +37,7 @@ export class MyApp {
 
         this.userget = this.homeServices.getAll();
         this.userget.subscribe();
+        console.log(this.userget);
 
       } else {
         this.rootPage = SigninPage;

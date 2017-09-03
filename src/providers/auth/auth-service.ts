@@ -30,7 +30,7 @@ export class AuthService {
 
   signInWithGoogle() {
     return this.googlePlus.login({
-      'webClientId': '638933829742-i0av628updkc723cb3gnirhh3b0829up.apps.googleusercontent.com',
+      'webClientId': '162395344261-4bnrcu05tn2452hdr5rj94rk99ksql87.apps.googleusercontent.com',
       'offline': true
     })
       .then(res => {

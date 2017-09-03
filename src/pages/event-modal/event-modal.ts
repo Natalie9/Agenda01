@@ -16,6 +16,7 @@ export class EventModal {
     let preselectedDate = moment(this.navParams.get('selectedDay')).format();
     this.event.startTime = preselectedDate;
     this.event.endTime = preselectedDate;
+    console.log(preselectedDate);
   }
 
   cancel() {

@@ -20,9 +20,9 @@
             <ion-item-sliding *ngFor="let item of items | async">
               <ion-item *ngIf="item.tipo == 'ati'">
                   <div class="font">
-                      <span class="nome">  Atividade: {{ item?.atividade }}</span>
+                      <span class="nome">  {{ item?.atividade }}</span>
                
-               <span class="data"> Data:{{ item?.data }}</span> 
+               <span class="data"> Data:{{ item?.datafinal }}</span> 
               </div>
               </ion-item>
             </ion-item-sliding>
@@ -39,9 +39,9 @@
             <ion-item-sliding *ngFor="let item of items | async">
               <ion-item *ngIf="item.tipo == 'prova'">
                   <div class="font">
-                      <span class="nome"> Prova:  {{ item?.atividade }}</span>
+                      <span class="nome"> {{ item?.atividade }}</span>
                
-               <span class="data">Data:{{ item?.data }}</span> 
+               <span class="data">Data:{{ item?.datafinal }}</span> 
                   </div>
               </ion-item>
             </ion-item-sliding>
@@ -58,9 +58,9 @@
             <ion-item-sliding *ngFor="let item of items | async">
               <ion-item *ngIf="item.tipo == 'ead'">
                   <div class="font">
-              <span class="nome">EAD:  {{ item?.atividade }}</span>
+              <span class="nome">{{ item?.atividade }}</span>
                
-               <span class="data">Data:{{ item?.data }}</span> 
+               <span class="data">Data:{{ item?.datafinal }}</span> 
               </div>
               </ion-item>
             </ion-item-sliding>
@@ -77,9 +77,9 @@
             <ion-item-sliding *ngFor="let item of items | async">
               <ion-item *ngIf="item.tipo == 'sem'">
                   <div class="font">
-                      <span class="nome"> Seminario: {{ item?.atividade }}</span>
+                      <span class="nome"> {{ item?.atividade }}</span>
                
-               <span class="data">Data:{{ item?.data }}</span> 
+               <span class="data">Data:{{ item?.datafinal }}</span> 
         </div>
               </ion-item>
             </ion-item-sliding>

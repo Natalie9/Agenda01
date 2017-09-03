@@ -4,6 +4,8 @@ import { HomePage } from '../home/home';
 import { User } from "../../providers/auth/user";
 import { Prova } from "../../providers/auth/prova";
 import { addPase } from "../../providers/auth/addPASE";
+import * as moment from 'moment';
+
 /**
  * Generated class for the AddTarefaPage page.
  *
@@ -18,7 +20,8 @@ import { addPase } from "../../providers/auth/addPASE";
 export class AddTarefaPage {
   
     prova:Prova = new Prova();
- 
+    minDate = new Date().toISOString();
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private add :addPase) {
 
   
@@ -29,6 +32,8 @@ export class AddTarefaPage {
   }
   voltar(){
 
+    this.prova.data = moment( this.minDate).format()
+    console.log(this.minDate);
     this.add.save(this.prova);
       this.navCtrl.setRoot(HomePage);
 

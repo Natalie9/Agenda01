@@ -44,9 +44,13 @@
       </ion-select>
   </ion-item>
   <ion-item>
-    <ion-label stacked>Data</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="prova.data"></ion-datetime>
+    <ion-label stacked>Data </ion-label>
+    <ion-datetime displayFormat="DD/MMM/YYYY" yearValues="2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030" pickerFormat="DDD MMM YY" [(ngModel)]="prova.datafinal"  [min]="minDate" [max]="2094-12-12"></ion-datetime>
   </ion-item>
+  <ion-item>
+  <ion-label stacked> Hora</ion-label>
+  <ion-datetime displayFormat=" HH:mm" pickerFormat="HH:mm" [(ngModel)]="prova.hora" ></ion-datetime>
+</ion-item>
 
     <button ion-button round (click)="voltar()" class="botao" >Prontinho</button>
 </ion-content>

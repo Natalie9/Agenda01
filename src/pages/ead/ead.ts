@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddTarefaPage } from '../add-tarefa/add-tarefa';
 import { FirebaseListObservable } from "angularfire2/database";
 import { addPase } from "../../providers/auth/addPASE";
+import { EditarPage } from "../editar/editar";
 
 /**
  * Generated class for the Provas page.
@@ -35,5 +36,9 @@ export class EAD {
   }
   removeItem(item:any){
     this.consultar.remove(item);
+  }
+
+  editItem(item:any){
+    this.navCtrl.push(EditarPage,{prova:item});
   }
 }

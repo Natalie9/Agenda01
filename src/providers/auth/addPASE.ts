@@ -37,4 +37,10 @@ export class addPase {
   }
 
   
+  public uploadAndSave(item: any) {
+    if (item.$key) {
+      return this.items.update(item.$key, item);
+    } 
+
+  }
 }

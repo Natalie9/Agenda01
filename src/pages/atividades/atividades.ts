@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddTarefaPage } from '../add-tarefa/add-tarefa';
 import { FirebaseListObservable } from "angularfire2/database";
 import { addPase } from "../../providers/auth/addPASE";
+import { Prova } from "../../providers/auth/prova";
+import { EditarPage } from "../editar/editar";
 
 /**
  * Generated class for the Provas page.
@@ -17,7 +19,8 @@ import { addPase } from "../../providers/auth/addPASE";
 })
 export class Atividades {
       items:FirebaseListObservable<any[]>;
- 
+      prova:Prova = new Prova();
+      
   constructor(public navCtrl: NavController, public navParams: NavParams, public consultar :addPase) {
     this.items = this.consultar.getAll();
     console.log(this.items);
@@ -35,5 +38,9 @@ export class Atividades {
   }
   removeItem(item:any){
     this.consultar.remove(item);
+  }
+
+  editItem(item:any){
+    this.navCtrl.push(EditarPage,{prova:item});
   }
 }

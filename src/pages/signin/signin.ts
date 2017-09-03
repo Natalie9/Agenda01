@@ -5,6 +5,7 @@ import { User } from '../../providers/auth/user';
 import { AuthService } from '../../providers/auth/auth-service';
 import { SignupPage } from '../signup/signup';
 import { SigninWithEmailPage } from '../signinwithemail/signinwithemail';
+import { HomePage } from "../home/home";
 
 @IonicPage()
 @Component({
@@ -29,27 +30,5 @@ export class SigninPage {
     this.navCtrl.push(SigninWithEmailPage);
   }
 
-/*  signInWithGoogle() {
-    this.authService.signInWithGoogle()
-      .then(() => {
-        this.navCtrl.setRoot(HomePage);
-      })
-      .catch((error) => {
-        console.error(error);
-        this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
-          .present();
-      });
-  }
-
-  signInWithFacebook() {
-    this.authService.signInWithFacebook()
-      .then(() => {
-        this.navCtrl.setRoot(HomePage);
-      })
-      .catch((error) => {
-        console.error(error);
-        this.toastCtrl.create({ duration: 3000, position: 'bottom', message: 'Erro ao efetuar o login' })
-          .present();
-      });
-  }*/
+  
 }

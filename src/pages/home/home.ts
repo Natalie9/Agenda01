@@ -18,7 +18,7 @@ export class HomePage {
 
     constructor(private navCtrl: NavController, public consultar :addPase) {
       this.items = this.consultar.getAll();
-      console.log(this.items);
+
   
   
     }
