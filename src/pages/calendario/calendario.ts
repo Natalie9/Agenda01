@@ -45,6 +45,7 @@ export class Calendario {
             this.eventData.endTime = new Date(list[_i-1].datafinal+'T'+list[_i-1].hora+':00-03:00');
             this.eventData.title = list[_i-1].atividade;
             this.event.allDay  = false;
+            
             let events = this.eventSource;
             events.push(this.eventData);
             this.eventSource = [];

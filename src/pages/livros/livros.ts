@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AdicionarLivros } from '../adicionar-livros/adicionar-livros';
+import { addPase } from "../../providers/auth/addPASE";
+import { FirebaseListObservable } from "angularfire2/database";
 /**
  * Generated class for the Livros page.
  *
@@ -13,8 +15,11 @@ import { AdicionarLivros } from '../adicionar-livros/adicionar-livros';
   templateUrl: 'livros.html',
 })
 export class Livros {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  
+  items:FirebaseListObservable<any[]>;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public consultar:addPase) {
+    this.items = this.consultar.getAlllivro();
   }
 
   ionViewDidLoad() {
@@ -22,10 +27,16 @@ export class Livros {
   }
 
 
-  adicionar(){
+  add(){
 
       this.navCtrl.push(AdicionarLivros);
 
   }
+  removeItem(item:any){
+    this.consultar.removelivro(item);
+  }
 
+  editItem(item:any){
+    this.navCtrl.push(AdicionarLivros,{livro:item});
+  }
 }

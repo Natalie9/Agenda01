@@ -17,13 +17,13 @@
 
   <ion-item>
      <ion-label floating>Livro</ion-label>
-     <ion-input type="text" value=""></ion-input>
+     <ion-input type="text" ng-value="livro?.nome" [(ngModel)]="livro.nome" ></ion-input>
    </ion-item>
    <ion-item>
-      <ion-label floating>Data de entrega</ion-label>
-      <ion-input type="text" value="  /  /  "></ion-input>
-    </ion-item>
+    <ion-label stacked>Data </ion-label>
+    <ion-datetime displayFormat="DD/MMM/YYYY" ng-value="livro?.entrega" yearValues="2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030" pickerFormat="DDD MMM YY" [(ngModel)]="livro.entrega"  [min]="minDate" [max]="2094-12-12"></ion-datetime>
+  </ion-item>
 
-    <button ion-button round (click)="voltar()" class="botao">Prontinho!</button>
+    <button ion-button round (click)="add()" class="botao">Prontinho!</button>
 
 </ion-content>

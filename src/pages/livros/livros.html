@@ -17,33 +17,22 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Lista da SOS
-    <br/>
-  13/06</ion-label>
-    <ion-checkbox color="dark" checked="false"></ion-checkbox>
-  </ion-item>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items | async">
+      <ion-item >
 
-  <ion-item>
-    <ion-label>Moodle Renatinho</ion-label>
-    <ion-checkbox color="dark" checked="false"></ion-checkbox>
-  </ion-item>
+        {{ item?.nome }}
+       
+       <span class="data">{{ item?.entrega }}</span> 
 
-  <ion-item>
-    <ion-label>Relatório Física</ion-label>
-    <ion-checkbox color="dark" checked="false"></ion-checkbox>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Não perde essa data</ion-label>
-    <ion-checkbox color="dark" checked="false"></ion-checkbox>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Ta quase vencendo</ion-label>
-    <ion-checkbox color="dark" checked="false"></ion-checkbox>
-  </ion-item>
-<img  (click)="adicionar()" class="plus" src="assets/add.png" width="80" height="80"/>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button icon-only color="primary" (click)="editItem(item)"><ion-icon name="create"></ion-icon></button>
+        <button ion-button icon-only color="secondary" (click)="removeItem(item)"><ion-icon name="checkbox"></ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+<img  (click)="add()" class="plus" src="assets/add.png" width="80" height="80"/>
 
 
 </ion-content>
